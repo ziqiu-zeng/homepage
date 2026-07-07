@@ -30,12 +30,12 @@ No LaTeX engine is installed locally yet. Pick one:
 
 ## Publish to the homepage
 
-The homepage links `cv_zzeng_2026.docx.pdf` at the repo root
+The homepage links `cv_zzeng.pdf` at the repo root
 (`index.html:83`). After building:
 
 ```sh
-make publish     # copies cv.pdf -> ../cv_zzeng_2026.docx.pdf
+make publish     # copies cv.pdf -> ../cv_zzeng.pdf
 ```
 
-Or, to use a clean filename instead, rename the target and update the link in
+Or, to use a different filename, rename the target and update the link in
 `index.html` (line 83) to match.
