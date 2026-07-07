@@ -1,0 +1,127 @@
+%==============================================================
+%  Ziqiu Zeng — Curriculum Vitae  (source of truth)
+%  Compile:  make            (needs a LaTeX engine, see README)
+%       or:  pdflatex cv.tex
+%       or:  tectonic cv.tex
+%  Standard pdfLaTeX. No exotic packages -> also builds on Overleaf.
+%==============================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---------- packages ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- edit-me: personal details ----------
+\newcommand{\myname}{Ziqiu Zeng}
+\newcommand{\myrole}{Research Manager (Simulation Lead), Human-Centered Robotics Lab}
+\newcommand{\myaffil}{National University of Singapore}
+\newcommand{\myemail}{zzeng@nus.edu.sg}
+\newcommand{\myhomepage}{https://ziqiu-zeng.github.io/homepage}
+\newcommand{\myscholar}{https://scholar.google.com/citations?user=u7adOeQAAAAJ&hl=en}
+
+% bold my own name in author lists
+\newcommand{\me}{\textbf{Ziqiu Zeng}}
+
+\hypersetup{
+  pdftitle={\myname{} - Curriculum Vitae},
+  pdfauthor={\myname},
+  colorlinks=true,
+  urlcolor=blue!55!black,
+}
+
+% ---------- section styling: small caps + full-width rule ----------
+\titleformat{\section}
+  {\normalfont\large\scshape}{}{0em}{}
+  [\vspace{-0.45em}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{1.15em}{0.55em}
+
+% ---------- helpers ----------
+% one row: flowing left text + right-aligned date
+\newcommand{\daterow}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}X r@{}}#1 & #2\end{tabularx}\par}
+
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{leftmargin=1.7em,itemsep=0.4em,topsep=0.3em,label=\arabic*.}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.32em,topsep=0.3em}
+\setlength{\parindent}{0pt}
+
+%==============================================================
+\begin{document}
+
+% ---------- header ----------
+\begin{center}
+  {\LARGE\scshape \myname}\\[0.45em]
+  \myrole\\
+  \myaffil\\[0.35em]
+  \href{mailto:\myemail}{\myemail} \quad|\quad
+  \href{\myhomepage}{Homepage} \quad|\quad
+  \href{\myscholar}{Google Scholar}
+\end{center}
+\vspace{0.3em}
+
+% ---------- employment ----------
+\section{Employment History}
+\daterow{\textbf{National University of Singapore}, Research Fellow}{2025 -- present}
+\daterow{\textbf{CAIR-CAS, Hong Kong}, Research Fellow}{2023 -- 2025}
+
+% ---------- education ----------
+\section{Academic Qualifications}
+\daterow{\textbf{Ph.D. in Computer Graphics}, University of Strasbourg, France}{2019 -- 2023}
+\daterow{\textbf{Eng. Degree in Automation}, University of Technology of Troyes, France}{2017 -- 2019}
+\daterow{\textbf{B.Sc. in Computer Science}, University of Shanghai, China}{2013 -- 2017}
+
+% ---------- interests ----------
+\section{Research Interest}
+Physics Engines for Robotics, Contact Mechanics, Differentiable Simulation,
+GPU Numerical Architecture, Sim-to-Real for Manipulation.
+
+% ---------- publications ----------
+\section{Selected Related Research Publications}
+\begin{pubs}
+  \item \me, et al. Fast But Accurate: A Real-Time Hyperelastic Simulator with
+        Robust Frictional Contact. \textit{ACM Transactions on Graphics (Proc.\ ACM SIGGRAPH 2025)}.
+  \item \me, et al. Fast and Reliable Gradients for Deformables Across Frictional
+        Contact Regimes. arXiv:2603.16478 (2026).
+  \item Siyuan Luo, \ldots, \me\textsuperscript{*}, Fan Shi. FLASH: Fast Learning via
+        GPU-Accelerated Simulation for High-Fidelity Deformable Manipulation in Minutes.
+        arXiv:2604.17513 (2026).
+  \item \me, et al. Real-Time FE Simulation for Large-Scale Problems using
+        Precondition-Based Contact Resolution and Isolated DOFs Constraints.
+        \textit{Computer Graphics Forum 2022}.
+  \item \me, et al. Dynamic Cutting Simulation using Elastic Snapping for Mesh
+        Quality Optimization. \textit{Computer Graphics Forum 2025}.
+  \item Zhenhao Huang, \ldots, \me, Fan Shi. Few-Shot Neural Differentiable Simulator:
+        Real-to-Sim Rigid-Contact Modeling. \textit{IEEE ICRA 2026}.
+  \item Xin Liu, \ldots, \me, \ldots, Fan Shi. Enabling Robust Cloth Manipulation via
+        Inference-Time Simulator-in-the-Loop Refinement. arXiv:2606.24552 (2026).
+  \item Chunzheng Wang, \ldots, \me, \ldots, Fan Shi. Soft Responsive Materials Enhance
+        Humanoid Safety. arXiv:2601.02857 (2026).
+\end{pubs}
+\vspace{0.2em}
+{\footnotesize \textsuperscript{*}\,Corresponding author.}
+
+% ---------- grants ----------
+\section{Grants \& Research Funding}
+\begin{itemize}
+  \item \textbf{NVIDIA Academic Grant}, 2025. \textit{Adaptive Fault-Tolerant Safe Locomotion with Differentiable Simulation}.
+  \item \textbf{Google Research Funding}, 2025. \textit{Sim-to-Dex: Contact-Rich Graph Neural Models for Robotic Manipulation}.
+  \item \textbf{Swiss AI Initiative Small Grant}, 2025. \textit{Learning Deformable Contact Dynamics for 4D Spatial Intelligence}.
+\end{itemize}
+
+% ---------- talks / posters / service ----------
+\section{Invited Talks, Posters \& Service}
+\begin{itemize}
+  \item \textbf{Talks \& Workshops:} ETH Zurich CRL Seminar; IEEE ICRA 2025; CoRL 2025.
+  \item \textbf{Posters:} ACM SIGGRAPH Asia 2025; NUS AI Research Day; RAS TC Model-Based Optimization for Robotics (2025).
+  \item \textbf{Service:} Organizer, IEEE ICRA 2026 Workshop ``Synthetic Data for Robot Learning''.
+\end{itemize}
+
+\end{document}

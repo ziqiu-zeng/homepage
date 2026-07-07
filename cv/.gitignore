@@ -1,0 +1,13 @@
+# Build output (the deployed copy lives at repo root: ../cv_zzeng.pdf)
+cv.pdf
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
